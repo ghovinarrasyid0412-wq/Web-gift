@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghovin ❤️ Wulan</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Splash Screen -->
+
+<div id="splash">
+
+    <div class="splash-heart">
+        ❤️
+    </div>
+
+    <h1>
+        Ghovin ❤️ Wulan
+    </h1>
+
+    <p>
+        Sebuah cerita kecil yang spesial
+    </p>
+
+</div>
+
+<!-- =====================
+Loading Screen
+===================== -->
+
+<div id="loading" style="display:none;">
+
+    <div class="loader-heart">
+        ❤️
+    </div>
+
+    <h2>
+        Preparing Your Surprise...
+    </h2>
+
+    <div class="progress">
+
+        <div class="bar"></div>
+
+    </div>
+
+</div>
+
+<!-- =====================
+Audio
+===================== -->
+
+<audio id="music" loop>
+
+    <source src="assets/music/jatuh-suka.mp3" type="audio/mpeg">
+
+</audio>
+
+<!-- =====================
+Dark Mode
+===================== -->
+
+<div class="theme-btn" onclick="toggleTheme()">
+
+🌙
+
+</div>
+
+<!-- =====================
+Music Button
+===================== -->
+
+<div class="music-btn" onclick="toggleMusic()">
+
+🎵
+
+</div>
+
+<!-- =====================
+Floating Hearts
+===================== -->
+
+<div id="hearts"></div>
+
+<!-- =====================
+Sakura
+===================== -->
+
+<div id="sakura"></div>
+
+<!-- =====================
+Night Sky
+===================== -->
+
+<div id="stars"></div>
+
+<!-- =====================
+Login
+===================== -->
+
+<section id="login">
+
+<div class="login-card">
+
+<h1>
+
+Welcome ❤️
+
+</h1>
+
+<p>
+
+Masukkan tanggal spesial kita
+
+</p>
+
+<input
+id="password"
+type="password"
+placeholder="17-07-2026">
+
+<button onclick="login()">
+
+Masuk ❤️
+
+</button>
+
+</div>
+
+</section>
+
+<!-- =====================
+HOME
+===================== -->
+
+<section
+id="home"
+class="hidden">
+
+<h1 class="title">
+
+Ghovin
+
+<span>
+
+❤️
+
+</span>
+
+Wulan
+
+</h1>
+
+<p class="subtitle">
+
+17 Juli 2026
+
+</p>
+
+<h2 id="typing"></h2>
+
+<div class="love-meter">
+
+<div class="love-fill"></div>
+
+</div>
+
+<button onclick="nextSection('letter')">
+
+Mulai Perjalanan ❤️
+
+</button>
+
+</section>
+
+<!-- =====================
+LOVE LETTER
+===================== -->
+
+<section
+id="letter"
+class="hidden">
+
+<h2>
+
+💌 Surat Untuk Wulan
+
+</h2>
+
+<div class="envelope"
+
+onclick="openLetter()">
+
+<div class="cover"></div>
+
+<div class="paper">
+
+<h3>
+
+Untuk Wulan ❤️
+
+</h3>
+
+<p>
+
+Terima kasih sudah hadir dalam hidupku.
+
+Website kecil ini kubuat dengan penuh rasa sayang.
+
+Semoga setiap halaman membuatmu tersenyum.
+
+Aku bersyukur bisa mengenalmu.
+
+Aku ingin terus membuat kenangan indah bersamamu.
+
+Love You ❤️
+
+-Ghovin
+
+</p>
+
+</div>
+
+</div>
+
+<button onclick="nextSection('gallery')">
+
+Lanjut 📸
+
+</button>
+
+</section>
+
+<!-- =====================
+GALLERY
+===================== -->
+
+<section
+id="gallery"
+class="hidden">
+
+<h2>
+
+📸 Gallery Kita
+
+</h2>
+
+<div class="slider">
+
+<img
+id="photo"
+src="assets/photos/wulan1.jpg"
+onclick="openLightbox()">
+
+</div>
+
+<div class="gallery-btn">
+
+<button onclick="prevPhoto()">
+
+⬅
+
+</button>
+
+<button onclick="nextPhoto()">
+
+➡
+
+</button>
+
+</div>
+
+<button onclick="nextSection('story')">
+
+Next ❤️
+
+</button>
+
+</section>
+
+<!-- Lightbox -->
+
+<div
+id="lightbox"
+class="lightbox"
+onclick="closeLightbox()">
+
+<img id="lightboxImg">
+
+</div>
+<!-- =====================
+OUR STORY
+===================== -->
+
+<section id="story" class="hidden">
+
+<h2>📖 Our Story</h2>
+
+<div class="timeline">
+
+<div class="card">
+
+<h3>17 Juli 2026 ❤️</h3>
+
+<p>
+Hari dimana perjalanan indah kita dimulai.
+Semoga cerita ini menjadi awal dari banyak
+kenangan yang akan kita buat bersama.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Pertama Kali Tertawa 😊</h3>
+
+<p>
+Setiap tawa dan cerita bersamamu
+selalu menjadi momen favoritku.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Hari Ini ❤️</h3>
+
+<p>
+Dan semoga masih akan ada
+ribuan hari indah lainnya.
+</p>
+
+</div>
+
+</div>
+
+<button onclick="nextSection('counter')">
+
+Lanjut ❤️
+
+</button>
+
+</section>
+
+<!-- =====================
+RELATIONSHIP COUNTER
+===================== -->
+
+<section id="counter" class="hidden">
+
+<h2>⏳ Kita Bersama Selama</h2>
+
+<h1 id="daysTogether">
+
+0 Hari
+
+</h1>
+
+<p>
+Semoga terus bertambah setiap harinya.
+</p>
+
+<button onclick="nextSection('reason')">
+
+Lanjut ❤️
+
+</button>
+
+</section>
+
+<!-- =====================
+365 REASONS
+===================== -->
+
+<section id="reason" class="hidden">
+
+<h2>
+
+365 Alasan Aku Sayang Kamu ❤️
+
+</h2>
+
+<div class="card">
+
+<h3 id="reasonText">
+
+Tekan tombol di bawah ❤️
+
+</h3>
+
+<button onclick="showReason()">
+
+Alasan Berikutnya
+
+</button>
+
+</div>
+
+<button onclick="nextSection('scrapbook')">
+
+Lanjut 📖
+
+</button>
+
+</section>
+
+<!-- =====================
+SCRAPBOOK
+===================== -->
+
+<section id="scrapbook" class="hidden">
+
+<h2>
+
+📚 Scrapbook
+
+</h2>
+
+<div class="card">
+
+<p>
+
+❤️ Foto pertama.
+
+❤️ Cerita pertama.
+
+❤️ Tawa pertama.
+
+❤️ Semua kenangan pertama.
+
+Semoga halaman ini nanti
+dipenuhi kenangan baru.
+
+</p>
+
+</div>
+
+<button onclick="nextSection('game')">
+
+Next 🎮
+
+</button>
+
+</section>
+
+<!-- =====================
+MINI GAME
+===================== -->
+
+<section id="game" class="hidden">
+
+<h2>
+
+🎮 Catch My Heart
+
+</h2>
+
+<div id="gameArea"></div>
+
+<button onclick="startGame()">
+
+Mulai Game
+
+</button>
+
+<button onclick="nextSection('quiz')">
+
+Love Quiz ❤️
+
+</button>
+
+</section>
+
+<!-- =====================
+LOVE QUIZ
+===================== -->
+
+<section id="quiz" class="hidden">
+
+<h2>
+
+❤️ Love Quiz ❤️
+
+</h2>
+
+<div class="card">
+
+<h3>
+
+Siapa orang paling ganteng?
+
+</h3>
+
+<button onclick="correctAnswer()">
+
+Ghovin 😎
+
+</button>
+
+<button onclick="wrongAnswer()">
+
+Orang Lain 🙈
+
+</button>
+
+</div>
+
+<button onclick="nextSection('gift')">
+
+Lanjut 🎁
+
+</button>
+
+</section>
+
+<!-- =====================
+SURPRISE GIFT
+===================== -->
+
+<section id="gift" class="hidden">
+
+<h2>
+
+🎁 Surprise Gift
+
+</h2>
+
+<div class="gift-box"
+
+onclick="openGift()">
+
+🎁
+
+</div>
+
+<p id="giftText">
+
+Klik hadiah di atas ❤️
+
+</p>
+
+<button onclick="nextSection('dream')">
+
+Lanjut 🌙
+
+</button>
+
+</section>
+
+<!-- =====================
+OUR DREAM
+===================== -->
+
+<section id="dream" class="hidden">
+
+<h2>
+
+🌙 Our Dream
+
+</h2>
+
+<div class="card">
+
+<p>
+
+Aku berharap...
+
+Suatu hari nanti kita bisa
+mengunjungi banyak tempat,
+tertawa bersama,
+dan membuat cerita yang
+lebih indah daripada hari ini.
+
+❤️
+
+</p>
+
+</div>
+
+<button onclick="nextSection('ending')">
+
+Lanjut ❤️
+
+</button>
+
+</section>
+
+<!-- =====================
+ENDING
+===================== -->
+
+<section id="ending" class="hidden">
+
+<h1>
+
+Thank You Wulan ❤️
+
+</h1>
+
+<p>
+
+Terima kasih sudah membuka
+website kecil ini.
+
+Semoga setiap halaman
+membuatmu tersenyum.
+
+Aku sayang kamu.
+
+❤️
+
+-Ghovin
+
+</p>
+
+<button onclick="fireworks()">
+
+Rayakan 🎆
+
+</button>
+
+</section>
+<!-- =====================
+GUEST BOOK
+===================== -->
+
+<section id="guestbook" class="hidden">
+
+<h2>💌 Pesan Untuk Ghovin</h2>
+
+<div class="card">
+
+<textarea
+id="message"
+placeholder="Tulis pesanmu di sini..."
+rows="6"></textarea>
+
+<button onclick="saveMessage()">
+
+Simpan ❤️
+
+</button>
+
+<div id="showMessage"></div>
+
+</div>
+
+</section>
+
+<!-- =====================
+BOTTOM NAVIGATION
+===================== -->
+
+<nav class="bottom-nav">
+
+<button onclick="showPage('home')">
+
+🏠
+
+</button>
+
+<button onclick="showPage('gallery')">
+
+📸
+
+</button>
+
+<button onclick="showPage('story')">
+
+📖
+
+</button>
+
+<button onclick="showPage('reason')">
+
+❤️
+
+</button>
+
+<button onclick="showPage('game')">
+
+🎮
+
+</button>
+
+<button onclick="showPage('guestbook')">
+
+💌
+
+</button>
+
+</nav>
+
+<!-- =====================
+FIREWORKS
+===================== -->
+
+<div id="fireworks"></div>
+
+<!-- =====================
+FOOTER
+===================== -->
+
+<footer>
+
+<p>
+
+Made with ❤️ by
+
+<b>Ghovin</b>
+
+for
+
+<b>Wulan</b>
+
+</p>
+
+<p>
+
+17 Juli 2026
+
+</p>
+
+</footer>
+
+<!-- =====================
+SCRIPT
+===================== -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
